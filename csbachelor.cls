@@ -57,6 +57,49 @@
 \RequirePackage[slantfont,boldfont]{xeCJK}
 \punctstyle{kaiming}
 
+\IfFontExistsTF{SimSun}{
+  \setCJKmainfont{SimSun}
+  \setCJKfamilyfont{SongTi}{SimSun}
+}{
+  \setCJKmainfont{FandolSong-Regular}
+  \setCJKfamilyfont{SongTi}{FandolSong-Regular}
+}
+\IfFontExistsTF{SimHei}{
+  \setCJKfamilyfont{HeiTi}{SimHei}
+}{
+  \setCJKfamilyfont{HeiTi}{FandolHei-Regular}
+}
+\IfFontExistsTF{KaiTi}{
+  \setCJKfamilyfont{KaiShu}{KaiTi}
+}{
+  \setCJKfamilyfont{KaiShu}{FandolKai-Regular}
+}
+\IfFontExistsTF{FangSong}{
+  \setCJKfamilyfont{FangSong}{FangSong}
+}{
+  \setCJKfamilyfont{FangSong}{FandolFang-Regular}
+}
+\IfFontExistsTF{STFangsong}{
+  \setCJKfamilyfont{STFangsong}{STFangsong}
+}{
+  \setCJKfamilyfont{STFangsong}{FandolFang-Regular}
+}
+\IfFontExistsTF{STXingkai}{
+  \setCJKfamilyfont{STXingkai}{STXingkai}
+}{
+  \setCJKfamilyfont{STXingkai}{FandolKai-Regular}
+}
+\IfFontExistsTF{LiSu}{
+  \setCJKfamilyfont{LiShu}{LiSu}
+}{
+  \setCJKfamilyfont{LiShu}{FandolHei-Regular}
+}
+\IfFontExistsTF{YouYuan}{
+  \setCJKfamilyfont{YouYuan}{YouYuan}
+}{
+  \setCJKfamilyfont{YouYuan}{FandolHei-Regular}
+}
+
 \RequirePackage[usenames]{color}
 \RequirePackage{fancyhdr}
 \RequirePackage{nomencl}
