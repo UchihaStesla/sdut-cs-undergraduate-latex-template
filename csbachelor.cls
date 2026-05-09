@@ -19,7 +19,7 @@
 \DeclareOption{twoside}{\sdut@sidetrue}
 \DeclareOption{oneside}{\sdut@sidefalse}
 
-\ExecuteOptions{twoside,oneside}
+\ExecuteOptions{oneside}
 \ProcessOptions\relax
 \ifsdut@side
    \LoadClass[a4paper,12pt,twoside,titlepage,openany]{book}
@@ -30,7 +30,16 @@
 \fi
 
 
-\RequirePackage[top=38mm,bottom=38mm,left=32mm,right=32mm,includefoot]{geometry}
+\RequirePackage[
+  a4paper,
+  top=25.4mm,
+  bottom=25.4mm,
+  left=31.7mm,
+  right=31.7mm,
+  headheight=12pt,
+  headsep=10pt,
+  footskip=17.5mm
+]{geometry}
 
 \RequirePackage{ifthen}
 \RequirePackage{calc}
@@ -121,8 +130,8 @@
 \RequirePackage{array}
 \RequirePackage{zhnumber}
 
-\setlength{\headheight}{22pt}
-\setlength{\footskip}{1.3cm}
+\setlength{\headheight}{12pt}
+\setlength{\footskip}{17.5mm}
 \raggedbottom
 
 \frenchspacing
@@ -139,7 +148,7 @@
 \let\endoldthebibliography\endthebibliography
 \renewenvironment{thebibliography}[1]{\begin{oldthebibliography}{#1}\setlength{\itemsep}{0em}\setlength{\parskip}{0em}}{\end{oldthebibliography}}
 
-\renewcommand{\baselinestretch}{1.389} % 20pt / 14.4pt
+\renewcommand{\baselinestretch}{1.389} % 正文固定约 20pt 行距
 \def\verbatim@font{\normalfont\ttfamily\linespread{1}\wuhao}
 \renewcommand{\arraystretch}{1}
 
@@ -185,23 +194,23 @@
 
 \RequirePackage{chngcntr}
 \xpatchcmd{\c@t@sin}{\@nameuse{the#2}.}{\arabic{#2}-}{}{}
-\counterwithin{figure}{section}
-\counterwithin{table}{section}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
 
-\titleformat{\chapter}[block]{\linespread{1}\heiti\sanhao\bfseries\filcenter}{\thechapter}{1em}{}{}
-\titlespacing{\chapter}{0em}{0pt}{18pt}
+\titleformat{\chapter}[block]{\linespread{1}\heiti\xiaosan\bfseries\filcenter}{\thechapter}{1em}{}{}
+\titlespacing{\chapter}{0em}{0pt}{20pt}
 \titlecontents{chapter}[0em]{}{\songti\sihao\thecontentslabel\hspace{1em}}{\songti\sihao}{\songti\sihao\titlerule*[5pt]{.}\contentspage}
 
 \titleformat{\section}[hang]{\linespread{1}\heiti\sihao\bfseries}{\thesection}{1em}{}{}
-\titlespacing{\section}{0em}{24pt}{6pt}
+\titlespacing{\section}{0em}{12pt}{12pt}
 \titlecontents{section}[2em]{}{\songti\xiaosi\thecontentslabel\hspace{1em}}{}{\songti\xiaosi\titlerule*[5pt]{.}\contentspage}
 
 \titleformat{\subsection}[hang]{\linespread{1}\heiti\shisanbang}{\thesubsection}{1em}{}{}
-\titlespacing{\subsection}{0em}{12pt}{6pt}
+\titlespacing{\subsection}{0em}{6pt}{6pt}
 \titlecontents{subsection}[4em]{}{\songti\wuhao\thecontentslabel\hspace{1em}}{}{\songti\wuhao\titlerule*[5pt]{.}\contentspage}
 
 \titleformat{\subsubsection}[hang]{\linespread{1}\heiti\xiaosi}{\thesubsubsection}{1em}{}{}
-\titlespacing{\subsubsection}{0pt}{12pt}{6pt}
+\titlespacing{\subsubsection}{0pt}{6pt}{6pt}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -210,18 +219,16 @@
 \renewcommand{\sectionmark}[1]{}
 \fancypagestyle{frontmatter}{
   \fancyhf{}
-  \fancyhead[L]{\xiaowu\songti 山东理工大学大学计算机科学与技术学院本科毕业设计报告}
-  \fancyhead[R]{\xiaowu\songti \rightmark}
-  \fancyfoot[C]{\songti\xiaowu \thepage}
+  \fancyhead[C]{\xiaowu\songti \rightmark}
+  \fancyfoot[C]{\songti\xiaowu -~\thepage~-}
 }
 \fancypagestyle{mainmatter}{
   \fancyhf{}
-  \fancyhead[L]{\xiaowu\songti 山东理工大学计算机科学与技术学院本科毕业设计报告}
-  \fancyhead[R]{\xiaowu\songti \thechapter \hspace{1em} \rightmark}
-  \fancyfoot[C]{\songti\xiaowu \thepage}
+  \fancyhead[C]{\xiaowu\songti \thechapter \hspace{1em} \rightmark}
+  \fancyfoot[C]{\songti\xiaowu -~\thepage~-}
 }
-\newcommand{\contentsformat}{\heiti\sanhao\bfseries}
-\renewcommand{\contentsname}{目录}
+\newcommand{\contentsformat}{\heiti\xiaosan\bfseries}
+\renewcommand{\contentsname}{目\quad 录}
 \renewcommand\tableofcontents{
     \if@twocolumn
       \@restonecoltrue\onecolumn
@@ -245,7 +252,10 @@
 \renewcommand{\tablename}{表} % 插表题头
 \renewcommand{\captionlabeldelim}{} %% 定义如 "图(表)1: 示例" 中的间隔符号,如 ":" ,这里定义为空
 \renewcommand{\captionlabelsep}{\hspace{1em}} %定义图表编号与标题间的间隔距离
-\setlength{\belowcaptionskip}{2mm}
+\renewcommand*\captionfont{\songti\wuhao}
+\captionstyle{center}
+\setlength{\abovecaptionskip}{6pt}
+\setlength{\belowcaptionskip}{6pt}
 \renewcommand{\footnotesize}{\xiaowu}
 \newtheoremstyle{sduttheorem}
    {9pt}{9pt}{\ttfamily}{0pt}{\lishu}{：}{0pt}{}
