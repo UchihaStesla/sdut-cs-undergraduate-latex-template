@@ -1,49 +1,36 @@
 {
   \setlength{\parindent}{0em}
 
-  {
-    \linespread{1}
-    \begin{flushleft}
-      \includegraphics[height=19.8mm]{data/cover-zh/logo.eps}\\[0.5em]
-      {\timesnewroman\xiaowu SHANDONG UNIVERSITY OF TECHNOLOGY}
-    \end{flushleft}
+  \begin{flushleft}
+    \vspace*{2mm}
+    \includegraphics[height=19.8mm,clip]{data/cover-zh/logo.eps}\par
+  \end{flushleft}
 
-    \vspace{2em}
-    
-    {
-      \heiti\sishiwu\bfseries
-      \centering
-      毕~~业~~设~~计~~说~~明~~书 \par
-    }
-    \vspace{6em}
-    
-    {
-      \heiti\erhao\bfseries
-      \centering
-      {\sduttitlec} \par
-    }
-    
-  }
-  
+  \vspace{-1.25em}
 
-  \vspace{12em}
+  {\centering\heiti\sishiwu\bfseries 毕业设计说明书\par}
 
-  {
-    \linespread{1.6}
-    \fangsong\xiaosan
-    \centering
-    \newlength{\titlelength}
-    \setlength{\titlelength}{18em}
-    学 \qquad 院： \; \underline{\makebox[\titlelength]{\sdutschoolc}}\\
-    专 \qquad 业： \; \underline{\makebox[\titlelength]{\sdutmajorc}} \\
-    学生姓名： \; \underline{\makebox[\titlelength]{\sdutstudentnamec}} \\
-    学 \qquad 号： \; \underline{\makebox[\titlelength]{\sdutstudentidc}} \\
-    指导老师： \; \underline{\makebox[\titlelength]{\instructorc}} \par
-  }
-  \vfill
-  {
-    \songti\sihao\bfseries
+  \vspace{35mm}
+
+  {\centering\linespread{1}\heiti\erhao\bfseries
+    \begin{minipage}[t][15mm][t]{0.82\textwidth}
       \centering
-      \sdutdatec \par
+      \sduttitlec\par
+    \end{minipage}\par}
+
+  \vspace{48mm}
+
+  \noindent\hspace*{35mm}{\songti\xiaosan
+    \begin{tabular}{@{}r@{\hspace{0.8em}}l@{}}
+      学\hspace{2.4em}院： & \underline{\makebox[52mm][c]{\sdutschoolc}} \\[2mm]
+      专\hspace{2.4em}业： & \underline{\makebox[52mm][c]{\sdutmajorc}} \\[2mm]
+      学生姓名： & \underline{\makebox[52mm][c]{\sdutstudentnamec}} \\[2mm]
+      学\hspace{2.4em}号： & \underline{\makebox[52mm][c]{\sdutstudentidc}} \\[2mm]
+      指导教师： & \underline{\makebox[52mm][c]{\instructorc}}
+    \end{tabular}\par
   }
+
+  \vspace{25.5mm}
+
+  {\centering\songti\sihao \sdutdatec\par}
 }

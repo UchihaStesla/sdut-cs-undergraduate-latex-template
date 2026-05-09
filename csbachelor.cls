@@ -36,7 +36,7 @@
   bottom=25.4mm,
   left=31.7mm,
   right=31.7mm,
-  headheight=12pt,
+  headheight=13pt,
   headsep=10pt,
   footskip=17.5mm
 ]{geometry}
@@ -130,7 +130,7 @@
 \RequirePackage{array}
 \RequirePackage{zhnumber}
 
-\setlength{\headheight}{12pt}
+\setlength{\headheight}{13pt}
 \setlength{\footskip}{17.5mm}
 \raggedbottom
 
@@ -146,7 +146,7 @@
 
 \let\oldthebibliography\thebibliography
 \let\endoldthebibliography\endthebibliography
-\renewenvironment{thebibliography}[1]{\begin{oldthebibliography}{#1}\setlength{\itemsep}{0em}\setlength{\parskip}{0em}}{\end{oldthebibliography}}
+\renewenvironment{thebibliography}[1]{\begin{oldthebibliography}{#1}\wuhao\setlength{\itemsep}{0em}\setlength{\parskip}{0em}}{\end{oldthebibliography}}
 
 \renewcommand{\baselinestretch}{1.389} % 正文固定约 20pt 行距
 \def\verbatim@font{\normalfont\ttfamily\linespread{1}\wuhao}
@@ -165,6 +165,7 @@
 \DeclareRobustCommand{\shisanbang}{\fontsize{13pt}{15.pt}\selectfont}
 \DeclareRobustCommand{\xiaosi}{\fontsize{12pt}{14.4pt}\selectfont}
 \DeclareRobustCommand{\wuhao}{\fontsize{10.5pt}{12.6pt}\selectfont}
+\DeclareRobustCommand{\shiyibang}{\fontsize{11pt}{13.2pt}\selectfont}
 \DeclareRobustCommand{\xiaowu}{\fontsize{9pt}{10.8pt}\selectfont}
 \DeclareRobustCommand{\liuhao}{\fontsize{7.5pt}{9pt}\selectfont}
 \DeclareRobustCommand{\xiaoliu}{\fontsize{6.5pt}{7.8pt}\selectfont}
@@ -214,18 +215,18 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{1pt}
 \renewcommand{\chaptermark}[1]{\markright{#1}}
 \renewcommand{\sectionmark}[1]{}
 \fancypagestyle{frontmatter}{
   \fancyhf{}
-  \fancyhead[C]{\xiaowu\songti \rightmark}
-  \fancyfoot[C]{\songti\xiaowu -~\thepage~-}
+  \fancyhead[C]{\wuhao\songti \rightmark}
+  \fancyfoot[C]{\timesnewroman\wuhao -~\thepage~-}
 }
 \fancypagestyle{mainmatter}{
   \fancyhf{}
-  \fancyhead[C]{\xiaowu\songti \thechapter \hspace{1em} \rightmark}
-  \fancyfoot[C]{\songti\xiaowu -~\thepage~-}
+  \fancyhead[C]{\wuhao\songti \thechapter \hspace{1em} \rightmark}
+  \fancyfoot[C]{\timesnewroman\wuhao -~\thepage~-}
 }
 \newcommand{\contentsformat}{\heiti\xiaosan\bfseries}
 \renewcommand{\contentsname}{目\quad 录}
@@ -252,7 +253,7 @@
 \renewcommand{\tablename}{表} % 插表题头
 \renewcommand{\captionlabeldelim}{} %% 定义如 "图(表)1: 示例" 中的间隔符号,如 ":" ,这里定义为空
 \renewcommand{\captionlabelsep}{\hspace{1em}} %定义图表编号与标题间的间隔距离
-\renewcommand*\captionfont{\songti\wuhao}
+\renewcommand*\captionfont{\songti\shiyibang}
 \captionstyle{center}
 \setlength{\abovecaptionskip}{6pt}
 \setlength{\belowcaptionskip}{6pt}
